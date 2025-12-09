@@ -91,9 +91,10 @@
     <ClCompile Include="source\entry.cxx" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\globals.hxx" />
-    <ClInclude Include="source\structs.hxx" />
-    <ClInclude Include="source\utils.hxx" />
+    <ClInclude Include="source\sdk\globals.hxx" />
+    <ClInclude Include="source\sdk\structs.hxx" />
+    <ClInclude Include="source\utils\utils.hxx" />
+    <ClInclude Include="source\features\godmode.hxx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
