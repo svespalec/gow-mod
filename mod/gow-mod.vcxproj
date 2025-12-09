@@ -64,6 +64,10 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp23</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>source/stdafx/stdafx.hxx</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>source/stdafx/stdafx.hxx</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -81,6 +85,10 @@
       <LanguageStandard>stdcpp23</LanguageStandard>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <AdditionalIncludeDirectories>$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>source/stdafx/stdafx.hxx</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>source/stdafx/stdafx.hxx</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -89,10 +97,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="source\entry.cxx" />
+    <ClCompile Include="source\stdafx\stdafx.cxx">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="source\sdk\globals.hxx" />
     <ClInclude Include="source\sdk\structs.hxx" />
+    <ClInclude Include="source\stdafx\stdafx.hxx" />
+    <ClInclude Include="source\utils\memory.hxx" />
     <ClInclude Include="source\utils\utils.hxx" />
     <ClInclude Include="source\features\godmode.hxx" />
     <ClInclude Include="source\features\menu.hxx" />

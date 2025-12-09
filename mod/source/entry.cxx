@@ -43,7 +43,7 @@ void main_thread( ) {
   FreeLibraryAndExitThread( globals::module_handle, 0 );
 }
 
-BOOL APIENTRY DllMain( HMODULE handle, DWORD reason, LPVOID reserved ) {
+BOOL APIENTRY DllMain( HMODULE handle, DWORD reason, [[maybe_unused]] LPVOID reserved ) {
   if ( reason == DLL_PROCESS_ATTACH ) {
     globals::module_handle = handle;
 

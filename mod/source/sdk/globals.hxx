@@ -1,10 +1,5 @@
 #pragma once
 
-#include <MinHook.h>
-#include <cstdint>
-#include <print>
-#include <windows.h>
-
 namespace globals {
   inline HMODULE   module_handle = nullptr;
   inline uintptr_t base          = 0;

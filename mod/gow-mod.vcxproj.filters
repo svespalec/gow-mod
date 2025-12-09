@@ -18,15 +18,30 @@
     <ClCompile Include="source\entry.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="source\stdafx\stdafx.cxx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="source\structs.hxx">
+    <ClInclude Include="source\sdk\globals.hxx">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\utils.hxx">
+    <ClInclude Include="source\sdk\structs.hxx">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="source\globals.hxx">
+    <ClInclude Include="source\utils\utils.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\features\godmode.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\features\menu.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\utils\memory.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\stdafx\stdafx.hxx">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
