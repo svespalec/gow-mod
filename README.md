@@ -2,6 +2,7 @@
 a basic trainer mod for god of war on steam at the moment
 
 ## features
+imgui menu with d3d present hook
 currently only god (of war) mode :^)
 
 ## credits
