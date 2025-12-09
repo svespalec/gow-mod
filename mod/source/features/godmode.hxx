@@ -1,7 +1,7 @@
 #pragma once
 
-#include "../sdk/globals.hxx"
-#include "../sdk/structs.hxx"
+#include <source/sdk/globals.hxx>
+#include <source/sdk/structs.hxx>
 
 namespace features::god_mode {
   inline float locked_health = 0.f;

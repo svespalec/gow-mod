@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../sdk/globals.hxx"
+#include <source/sdk/globals.hxx>
 
 template < typename Fn >
 inline bool hook( uintptr_t offset, void* detour, Fn& original ) {

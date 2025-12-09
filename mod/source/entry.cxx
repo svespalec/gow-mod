@@ -1,8 +1,8 @@
-#include "features/godmode.hxx"
-#include "features/menu.hxx"
-#include "sdk/globals.hxx"
-#include "sdk/structs.hxx"
-#include "utils/utils.hxx"
+#include <source/features/godmode.hxx>
+#include <source/features/menu.hxx>
+#include <source/sdk/globals.hxx>
+#include <source/sdk/structs.hxx>
+#include <source/utils/utils.hxx>
 
 void main_thread( ) {
   utils::open_console( );

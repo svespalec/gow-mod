@@ -1,6 +1,6 @@
 #pragma once
 
-#include "globals.hxx"
+#include <source/sdk/globals.hxx>
 
 // notes:
 // make sure to use VEH debugger in CE or game will crash due to Denuvo

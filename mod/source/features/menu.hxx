@@ -1,8 +1,8 @@
 #pragma once
 
-#include "../sdk/globals.hxx"
-#include "../utils/utils.hxx"
-#include "godmode.hxx"
+#include <source/features/godmode.hxx>
+#include <source/sdk/globals.hxx>
+#include <source/utils/utils.hxx>
 
 #include <d3d11.h>
 #include <dxgi.h>
