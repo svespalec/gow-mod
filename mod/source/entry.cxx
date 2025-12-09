@@ -4,11 +4,9 @@
 #include "utils/utils.hxx"
 
 void main_thread( ) {
-  open_console( );
-
+  utils::open_console( );
   globals::init( );
-
-  features::godmode::init( );
+  features::god_mode::init( );
 
   std::println( "[+] gow trainer loaded" );
   std::println( "[+] base: {:p}", reinterpret_cast< void * >( globals::base ) );
@@ -37,7 +35,8 @@ void main_thread( ) {
 
   Sleep( 500 );
 
-  close_console( );
+  utils::close_console( );
+
   FreeLibraryAndExitThread( globals::module_handle, 0 );
 }
 

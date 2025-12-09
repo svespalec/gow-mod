@@ -4,8 +4,9 @@
 #include "../sdk/structs.hxx"
 #include "../utils/utils.hxx"
 
-namespace features::godmode {
-  using takedmg_fn                       = void( __fastcall * )( void *entity, float damage );
+namespace features::god_mode {
+  using takedmg_fn = void( __fastcall * )( void *entity, float damage );
+
   inline takedmg_fn original_take_damage = nullptr;
 
   inline void __fastcall hooked_take_damage( void *entity, float damage ) {
@@ -25,4 +26,4 @@ namespace features::godmode {
   inline void init( ) {
     MH_HOOK( globals::offsets::take_damage, hooked_take_damage, original_take_damage );
   }
-} // namespace features::godmode
+} // namespace features::god_mode
