@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="entry.cxx">
+    <ClCompile Include="source\entry.cxx">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="structs.hxx">
+    <ClInclude Include="source\structs.hxx">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="utils.hxx">
+    <ClInclude Include="source\utils.hxx">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="globals.hxx">
+    <ClInclude Include="source\globals.hxx">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -135,12 +135,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="entry.cxx" />
+    <ClCompile Include="source\entry.cxx" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="globals.hxx" />
-    <ClInclude Include="structs.hxx" />
-    <ClInclude Include="utils.hxx" />
+    <ClInclude Include="source\globals.hxx" />
+    <ClInclude Include="source\structs.hxx" />
+    <ClInclude Include="source\utils.hxx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
