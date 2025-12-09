@@ -16,10 +16,10 @@ struct entity {
 };
 
 struct game_instance {
-  void   *unk_0x00;     // +0x00
-  entity *local_player; // +0x08
+  void*   unk_0x00;     // +0x00
+  entity* local_player; // +0x08
 };
 
-inline game_instance *get_game_instance( ) {
-  return *reinterpret_cast< game_instance ** >( globals::base + globals::offsets::game_instance );
+inline game_instance* get_game_instance( ) {
+  return *reinterpret_cast< game_instance** >( globals::base + globals::offsets::game_instance );
 }

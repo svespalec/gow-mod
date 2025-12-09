@@ -6,10 +6,9 @@
 void main_thread( ) {
   utils::open_console( );
   globals::init( );
-  features::god_mode::init( );
 
   std::println( "[+] gow trainer loaded" );
-  std::println( "[+] base: {:p}", reinterpret_cast< void * >( globals::base ) );
+  std::println( "[+] base: {:p}", reinterpret_cast< void* >( globals::base ) );
   std::println( "[+] press END to unload\n" );
 
   while ( globals::running ) {
@@ -18,20 +17,19 @@ void main_thread( ) {
       break;
     }
 
+    features::god_mode::tick( );
+
     const auto game = get_game_instance( );
 
     if ( game && game->local_player )
-      std::println( "health: {:.1f}", game->local_player->health );
+      std::println( "health: {:.1f} @ {:p}", game->local_player->health, reinterpret_cast< void* >( &game->local_player->health ) );
     else
       std::println( "waiting for player..." );
 
-    Sleep( 1000 );
+    Sleep( 100 ); // faster tick for health lock
   }
 
   std::println( "[+] unloading..." );
-
-  MH_DisableHook( MH_ALL_HOOKS );
-  MH_Uninitialize( );
 
   Sleep( 500 );
 

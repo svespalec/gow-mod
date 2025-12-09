@@ -12,16 +12,15 @@ namespace globals {
 
   namespace offsets {
     constexpr uintptr_t game_instance = 0x22E7D50;
-    constexpr uintptr_t take_damage   = 0x7A0C60;
+    constexpr uintptr_t set_health    = 0x7A0CFA; // mid-hook before movss [rbx+20],xmm6
   } // namespace offsets
 
   inline void init( ) {
     MH_Initialize( );
-
     base = reinterpret_cast< uintptr_t >( GetModuleHandle( nullptr ) );
   }
 
-  inline void *get_addr( uintptr_t offset ) {
-    return reinterpret_cast< void * >( base + offset );
+  inline void* get_addr( uintptr_t offset ) {
+    return reinterpret_cast< void* >( base + offset );
   }
 } // namespace globals

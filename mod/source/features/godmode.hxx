@@ -2,28 +2,30 @@
 
 #include "../sdk/globals.hxx"
 #include "../sdk/structs.hxx"
-#include "../utils/utils.hxx"
 
 namespace features::god_mode {
-  using takedmg_fn = void( __fastcall * )( void *entity, float damage );
+  inline float locked_health = 0.f;
+  inline bool  enabled       = true;
 
-  inline takedmg_fn original_take_damage = nullptr;
+  inline void tick( ) {
+    if ( !enabled )
+      return;
 
-  inline void __fastcall hooked_take_damage( void *entity, float damage ) {
     const auto game = get_game_instance( );
 
     if ( !game || !game->local_player )
-      return original_take_damage( entity, damage );
-
-    if ( entity == game->local_player ) {
-      std::println( "blocking {:.1f} damage", damage );
       return;
+
+    auto& health = game->local_player->health;
+
+    // update locked health if current is higher (healed/new max)
+    if ( health > locked_health )
+      locked_health = health;
+
+    // restore if damaged
+    if ( health < locked_health ) {
+      std::println( "blocked damage: {:.1f} -> {:.1f}", locked_health, health );
+      health = locked_health;
     }
-
-    return original_take_damage( entity, damage );
-  }
-
-  inline void init( ) {
-    MH_HOOK( globals::offsets::take_damage, hooked_take_damage, original_take_damage );
   }
 } // namespace features::god_mode
