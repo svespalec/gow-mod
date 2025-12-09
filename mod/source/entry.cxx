@@ -1,4 +1,5 @@
 #include "features/godmode.hxx"
+#include "features/menu.hxx"
 #include "sdk/globals.hxx"
 #include "sdk/structs.hxx"
 #include "utils/utils.hxx"
@@ -6,6 +7,8 @@
 void main_thread( ) {
   utils::open_console( );
   globals::init( );
+
+  features::menu::init( );
 
   std::println( "[+] gow trainer loaded" );
   std::println( "[+] base: {:p}", reinterpret_cast< void* >( globals::base ) );
@@ -30,6 +33,8 @@ void main_thread( ) {
   }
 
   std::println( "[+] unloading..." );
+
+  features::menu::shutdown( );
 
   Sleep( 500 );
 
