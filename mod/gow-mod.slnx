@@ -1,7 +1,6 @@
 <Solution>
   <Configurations>
     <Platform Name="x64" />
-    <Platform Name="x86" />
   </Configurations>
-  <Project Path="gow-mod.vcxproj" />
+  <Project Path="gow-mod.vcxproj" Id="924facb8-6f38-469a-8862-1bd33375cc6d" />
 </Solution>
