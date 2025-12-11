@@ -44,5 +44,8 @@
     <ClInclude Include="source\stdafx\stdafx.hxx">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\features\update_health_display.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

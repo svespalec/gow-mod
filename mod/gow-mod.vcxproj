@@ -103,6 +103,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="source\features\update_health_display.hxx" />
     <ClInclude Include="source\sdk\globals.hxx" />
     <ClInclude Include="source\sdk\structs.hxx" />
     <ClInclude Include="source\stdafx\stdafx.hxx" />

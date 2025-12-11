@@ -165,8 +165,6 @@ namespace features::menu {
   }
 
   inline void shutdown( ) {
-    MH_DisableHook( MH_ALL_HOOKS );
-
     // restore wndproc
     if ( original_wndproc && hwnd )
       SetWindowLongPtrA( hwnd, GWLP_WNDPROC, reinterpret_cast< LONG_PTR >( original_wndproc ) );

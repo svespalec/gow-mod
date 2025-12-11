@@ -18,6 +18,10 @@ namespace features::god_mode {
 
     auto& health = game->local_player->health;
 
+    game->local_player->speed = 5.f;
+
+    std::println( "speed: {:.1f}", game->local_player->speed );
+
     // update locked health if current is higher (healed/new max)
     if ( health > locked_health )
       locked_health = health;
