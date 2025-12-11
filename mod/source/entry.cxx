@@ -10,6 +10,7 @@ void main_thread( ) {
   globals::init( );
 
   features::hooks::update_health_display::init( );
+  features::hooks::check_can_die::init( );
 
   features::menu::init( );
 
@@ -23,16 +24,7 @@ void main_thread( ) {
       break;
     }
 
-    features::god_mode::tick( );
-
-    const auto game = get_game_instance( );
-
-    if ( game && game->local_player )
-      std::println( "health: {:.1f} @ {:p}", game->local_player->health, reinterpret_cast< void* >( &game->local_player->health ) );
-    else
-      std::println( "waiting for player..." );
-
-    Sleep( 100 ); // faster tick for health lock
+    Sleep( 100 );
   }
 
   std::println( "[+] unloading..." );

@@ -99,8 +99,7 @@ namespace features::menu {
 
     if ( show_menu ) {
       ImGui::Begin( "gow trainer", &show_menu );
-      ImGui::Checkbox( "god mode", &features::god_mode::enabled );
-      ImGui::Text( "health lock: %.1f", features::god_mode::locked_health );
+      ImGui::Checkbox( "god mode", &features::hooks::check_can_die::enabled );
       ImGui::End( );
     }
 

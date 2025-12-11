@@ -2,34 +2,23 @@
 
 #include <source/sdk/globals.hxx>
 #include <source/sdk/structs.hxx>
+#include <source/utils/utils.hxx>
 
-namespace features::god_mode {
-  inline float locked_health = 0.f;
-  inline bool  enabled       = true;
+namespace features::hooks::check_can_die {
+  inline bool enabled = true;
 
-  inline void tick( ) {
-    if ( !enabled )
-      return;
+  // char __fastcall goPlayer_checkCanDie(_QWORD *a1, _BYTE *a2)
+  inline bool __fastcall detour( void* local_player, void* a2 );
+  inline decltype( &detour ) original = nullptr;
 
-    const auto game = get_game_instance( );
+  inline bool __fastcall detour( void* local_player, void* a2 ) {
+    if ( enabled )
+      return false; // can't die
 
-    if ( !game || !game->local_player )
-      return;
-
-    auto& health = game->local_player->health;
-
-    game->local_player->speed = 5.f;
-
-    std::println( "speed: {:.1f}", game->local_player->speed );
-
-    // update locked health if current is higher (healed/new max)
-    if ( health > locked_health )
-      locked_health = health;
-
-    // restore if damaged
-    if ( health < locked_health ) {
-      std::println( "blocked damage: {:.1f} -> {:.1f}", locked_health, health );
-      health = locked_health;
-    }
+    return original( local_player, a2 );
   }
-} // namespace features::god_mode
+
+  inline void init( ) {
+    MH_HOOK( globals::offsets::check_can_die, detour, original );
+  }
+} // namespace features::hooks::check_can_die
