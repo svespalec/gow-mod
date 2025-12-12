@@ -107,6 +107,7 @@
     <ClInclude Include="source\sdk\globals.hxx" />
     <ClInclude Include="source\sdk\structs.hxx" />
     <ClInclude Include="source\stdafx\stdafx.hxx" />
+    <ClInclude Include="source\utils\address.hxx" />
     <ClInclude Include="source\utils\memory.hxx" />
     <ClInclude Include="source\utils\utils.hxx" />
     <ClInclude Include="source\features\godmode.hxx" />

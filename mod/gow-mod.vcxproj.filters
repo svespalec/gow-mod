@@ -47,5 +47,8 @@
     <ClInclude Include="source\features\update_health_display.hxx">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="source\utils\address.hxx">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

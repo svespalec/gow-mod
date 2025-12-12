@@ -20,7 +20,7 @@ struct game_instance {
   entity* local_player; // +0x08 (because every function accesses it like v1 = *(_QWORD *)(this + 8);)
 };
 
-// we dont have to use this because we have update health display hook 
+// we dont have to use this because we have update health display hook
 inline game_instance* get_game_instance( ) {
-  return *reinterpret_cast< game_instance** >( globals::base + 0x22E7D50 );
+  return globals::addr( 0x22E7D50 ).deref( ).as< game_instance >( );
 }

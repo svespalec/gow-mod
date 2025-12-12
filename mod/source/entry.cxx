@@ -15,7 +15,7 @@ void main_thread( ) {
   features::menu::init( );
 
   std::println( "[+] gow trainer loaded" );
-  std::println( "[+] base: {:p}", reinterpret_cast< void* >( globals::base ) );
+  std::println( "[+] base: {:#x}", globals::base.get( ) );
   std::println( "[+] press END to unload\n" );
 
   while ( globals::running ) {

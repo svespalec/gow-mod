@@ -55,7 +55,7 @@ namespace memory {
       return m_addr != 0;
     }
 
-    std::uintptr_t raw( ) const {
+    std::uintptr_t get( ) const {
       return m_addr;
     }
 
