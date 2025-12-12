@@ -5,8 +5,11 @@
 #include <MinHook.h>
 #include <windows.h>
 #include <cstdint>
+#include <cstring>
 #include <print>
 #include <optional>
 #include <span>
 #include <string_view>
 #include <vector>
+
+#include <source/utils/address.hxx>
