@@ -16,7 +16,7 @@ void main_thread( ) {
 
   std::println( "[+] gow trainer loaded" );
   std::println( "[+] base: {:#x}", globals::base.get( ) );
-  std::println( "[+] press END to unload\n" );
+  std::println( "[+] press END to unload" );
 
   while ( globals::running ) {
     if ( GetAsyncKeyState( VK_END ) & 1 ) {

@@ -1,7 +1,5 @@
 #pragma once
 
-#include <source/sdk/globals.hxx>
-
 // notes:
 // make sure to use VEH debugger in CE or game will crash due to Denuvo
 
@@ -17,10 +15,5 @@ struct entity {
 
 struct game_instance {
   void*   vtable;
-  entity* local_player; // +0x08 (because every function accesses it like v1 = *(_QWORD *)(this + 8);)
+  entity* local_player; // +0x08
 };
-
-// we dont have to use this because we have update health display hook
-inline game_instance* get_game_instance( ) {
-  return globals::addr( 0x22E7D50 ).deref( ).as< game_instance >( );
-}

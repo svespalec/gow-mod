@@ -9,7 +9,17 @@ namespace features::hooks::update_health_display {
   inline decltype( &detour ) original = nullptr;
 
   inline std::uint64_t __fastcall detour( game_instance* instance ) {
-    globals::local_player = instance->local_player;
+    auto local = instance->local_player;
+
+    globals::game         = instance;
+    globals::local_player = local;
+
+    static bool _ = ( std::println( "[+] local: {:p}", static_cast< void* >( local ) ), true );
+
+    // constantly update our health so we don't have a red screen on 1hp
+    if ( features::hooks::check_can_die::enabled ) {
+      local->health = 999.f;
+    }
 
     return original( instance );
   }

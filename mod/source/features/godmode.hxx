@@ -8,12 +8,14 @@ namespace features::hooks::check_can_die {
   inline bool enabled = true;
 
   // char __fastcall goPlayer_checkCanDie(_QWORD *a1, _BYTE *a2)
-  inline bool __fastcall detour( void* local_player, void* a2 );
+  inline bool __fastcall detour( entity* local_player, void* a2 );
   inline decltype( &detour ) original = nullptr;
 
-  inline bool __fastcall detour( void* local_player, void* a2 ) {
-    if ( enabled )
-      return false; // can't die
+  inline bool __fastcall detour( entity* local_player, void* a2 ) {
+    // prevent death
+    if ( enabled ) {
+      return false; 
+    }
 
     return original( local_player, a2 );
   }
